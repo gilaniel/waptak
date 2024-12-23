@@ -14,7 +14,7 @@ export const channels: ChannelItem[] = [
     category: "yt",
   },
   {
-    id: 2,
+    id: 4,
     gallery: [1, 2, 3, 4],
     title: "Послезавтра",
     author: "Николай Дубинин",
@@ -26,7 +26,7 @@ export const channels: ChannelItem[] = [
     category: "yt",
   },
   {
-    id: 3,
+    id: 2,
     gallery: [1, 2, 3, 4],
     title: "Погнали!",
     author: "Стас Натанзон",
@@ -38,7 +38,7 @@ export const channels: ChannelItem[] = [
     category: "yt",
   },
   {
-    id: 4,
+    id: 3,
     gallery: [1, 2, 3, 4],
     title: "Прекрасное Далёко",
     author: "",
