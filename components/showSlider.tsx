@@ -1,11 +1,11 @@
 import { ChannelItem } from "@/types/model";
-import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import { FadeImg } from "./image";
 
 export const ShowSlider = ({ data }: { data: ChannelItem }) => {
   const [selected, setSelected] = useState(data.gallery[0]);
@@ -21,7 +21,7 @@ export const ShowSlider = ({ data }: { data: ChannelItem }) => {
   return (
     <div className="max-w-full xl:max-w-[457px] xl:min-w-[457px] fhd:max-w-[724px] fhd:min-w-[724px] xl:w-full">
       <div className="mx-auto h-[176px] sm:h-[296px] max-w-[592px] xl:max-w-full fhd:h-[315px] relative mb-2 rounded-[4px] overflow-hidden pr-2">
-        <Image
+        <FadeImg
           src={`/channels/${data.id}/${selected}.png`}
           alt={data.title}
           fill
@@ -49,7 +49,7 @@ export const ShowSlider = ({ data }: { data: ChannelItem }) => {
               }`}
               onClick={() => setSelected(item)}
             >
-              <Image
+              <FadeImg
                 src={`/channels/${data.id}/${item}.png`}
                 alt=""
                 quality={100}

@@ -6,9 +6,9 @@ import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import { ChannelItem } from "@/types/model";
-import Image from "next/image";
 import Link from "next/link";
-import { memo, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { FadeImg } from "./image";
 
 export const Slider = ({
   channels,
@@ -81,7 +81,7 @@ export const Slider = ({
                   firstSwiper?.slideToLoop(i);
                 }}
               >
-                <Image
+                <FadeImg
                   src={`/channels/${channel.id}/main.webp`}
                   alt={channel.title}
                   sizes="100%"

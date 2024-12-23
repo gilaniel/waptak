@@ -7,6 +7,7 @@ import { Slider } from "./slider";
 import { Tabs } from "./tabs";
 import Link from "next/link";
 import Image from "next/image";
+import { FadeImg } from "./image";
 
 export const Channels = ({
   channels,
@@ -76,7 +77,7 @@ const Channel = ({
       style={{ boxShadow: "0 4px 14px 0 rgba(0, 0, 0, 0.35)" }}
       onClick={() => onChannelClick(channel)}
     >
-      <Image
+      <FadeImg
         src={`/channels/${channel.id}/main.webp`}
         alt={channel.title}
         sizes="100%"

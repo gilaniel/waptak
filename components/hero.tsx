@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { Button } from "./button";
+import { FadeImg } from "./image";
 
 export const Hero = () => {
   return (
@@ -9,7 +9,7 @@ export const Hero = () => {
           <source srcSet="/bg/bg-xxl.png" media="(min-width: 1440px)" />
           <source srcSet="/bg/bg-xl.png" media="(min-width: 1280px)" />
           <source srcSet="/bg/bg-md.png" media="(min-width: 768px)" />
-          <Image
+          <FadeImg
             src="/bg/bg-sm.png"
             alt="Waptak"
             sizes="100%"
