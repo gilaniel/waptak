@@ -16,6 +16,7 @@ export const Hero = () => {
             fill
             quality={100}
             className="object-cover object-center"
+            noLoader
           />
         </picture>
         <div className="flex flex-col gap-8 relative z-[3] max-w-[504px]">

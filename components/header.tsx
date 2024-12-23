@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FadeImg } from "./image";
+import Image from "next/image";
 
 export const Header = () => {
   return (
@@ -12,7 +13,7 @@ export const Header = () => {
     >
       <div className="flex w-full">
         <Link href="/">
-          <FadeImg
+          <Image
             src="/logo.svg"
             width={51}
             height={36}
