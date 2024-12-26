@@ -20,7 +20,7 @@ export const ShowSlider = ({ data }: { data: ChannelItem }) => {
 
   return (
     <div className="max-w-full xl:max-w-[457px] xl:min-w-[457px] fhd:max-w-[724px] fhd:min-w-[724px] xl:w-full">
-      <div className="mx-auto h-[176px] sm:h-[296px] max-w-[592px] xl:max-w-full fhd:h-[315px] relative mb-2 rounded-[4px] overflow-hidden pr-2">
+      <div className="mx-auto h-[176px] sm:h-[296px] max-w-[592px] xl:max-w-full fhd:h-[315px] relative mb-2 rounded-[4px] overflow-hidden pr-2 md:pr-0">
         <FadeImg
           src={`/channels/${data.id}/${selected}.png`}
           alt={data.title}

@@ -44,7 +44,7 @@ export const Details = ({ data }: { data: ChannelItem }) => {
           <div className="flex flex-col gap-1">
             <div className="flex gap-4 items-center">
               <label className="font-[900] text-[12px] leading-[200%] uppercase min-w-[95px]">
-                genre(s)
+                Жанры
               </label>
               <div className="text-[14px] leading-[171%]">{data.genre}</div>
             </div>
@@ -67,19 +67,27 @@ export const Details = ({ data }: { data: ChannelItem }) => {
 
             <div className="flex gap-4 items-center">
               <label className="font-[900] text-[12px] leading-[200%] uppercase min-w-[95px]">
-                Highligts
+                Метрики
               </label>
-              <div className="text-[14px] leading-[171%]">
-                {data.subs} subscribers; {data.views} views monthly;
+              <div className="text-[14px] leading-[171%] flex gap-3">
+                <span>
+                  <span className="font-[700]">Подписчики:</span> {data.subs}
+                </span>
+                |
+                <span>
+                  <span className="font-[700]">Просмотры:</span> {data.views}
+                </span>
               </div>
             </div>
 
-            <div className="flex gap-4 items-center">
-              <label className="font-[900] text-[12px] leading-[200%] uppercase min-w-[95px]">
-                Author
-              </label>
-              <div className="text-[14px] leading-[171%]">{data.author}</div>
-            </div>
+            {data.author && (
+              <div className="flex gap-4 items-center">
+                <label className="font-[900] text-[12px] leading-[200%] uppercase min-w-[95px]">
+                  Автор
+                </label>
+                <div className="text-[14px] leading-[171%]">{data.author}</div>
+              </div>
+            )}
           </div>
         </div>
       </div>
