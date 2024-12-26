@@ -71,11 +71,11 @@ export const Details = ({ data }: { data: ChannelItem }) => {
               </label>
               <div className="text-[14px] leading-[171%] flex gap-3">
                 <span>
-                  <span className="font-[700]">Подписчики:</span> {data.subs}
+                  Подписчики: <span className="font-[700]">{data.subs}</span>
                 </span>
                 |
                 <span>
-                  <span className="font-[700]">Просмотры:</span> {data.views}
+                  Просмотры: <span className="font-[700]">{data.views}</span>
                 </span>
               </div>
             </div>
