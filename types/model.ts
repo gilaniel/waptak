@@ -30,6 +30,7 @@ export type ChannelItem = {
   views?: string;
   author?: string;
   categoryName: string;
+  gallery?: any[];
 };
 
 export type Partner = {
