@@ -18,6 +18,10 @@ body {
   font-family: var(--font-lato), Helvetica, sans-serif;
 }
 
+.tabs {
+  font-family: var(--font-lato), Helvetica, sans-serif;
+}
+
 .banner::after {
   content: "";
   position: absolute;
@@ -221,4 +225,20 @@ input:-webkit-autofill:focus {
   border-width: 0 0.15em 0.15em 0;
   border-radius: 4px;
   transform: rotate(45deg);
+}
+
+.kids-parallax {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.kids-parallax .scroller {
+  text-transform: uppercase;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
 }
