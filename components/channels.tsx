@@ -8,6 +8,7 @@ import { Tabs } from "./tabs";
 import Link from "next/link";
 import Image from "next/image";
 import { FadeImg } from "./image";
+import { Button } from "./button";
 
 export const Channels = ({
   channels,
@@ -19,14 +20,25 @@ export const Channels = ({
   const [activeChannel, setChannel] = useState<ChannelItem | undefined>(
     channels.find((channel) => channel.id === current) || channels[0]
   );
+  const [count, setCount] = useState(12);
+  const [category, setCategory] = useState("all");
 
-  // const [category, setCategory] = useState("all");
+  const list = channels.filter(
+    (item) => category === "all" || item.category === category
+  );
+
+  const handleTabChange = (tab: string) => {
+    setCategory(tab);
+    setCount(12);
+  };
 
   return (
     <>
-      <section className="flex flex-col items-center">
-        <h2 className="mb-5 text-[32px]">Наши каналы</h2>
-        {/* <Tabs handleCategoryChange={setCategory} /> */}
+      <section className="flex flex-col items-center pb-10">
+        <h2 className="mb-8 text-[32px] text-center px-2">
+          Наши каналы и проекты
+        </h2>
+        <Tabs handleCategoryChange={handleTabChange} />
 
         {/* <Slider
           category={category}
@@ -39,52 +51,51 @@ export const Channels = ({
           handleChannelChange={setChannel}
         /> */}
 
-        <div className="flex flex-wrap gap-4 px-5 md:px-10 justify-center channels">
-          {channels.map((item) => (
-            <Channel
-              channel={item}
-              key={item.id}
-              onChannelClick={setChannel}
-              isActive={activeChannel?.id === item.id}
-            />
+        <div className="flex flex-wrap gap-4 px-5 md:px-10 channels justify-center">
+          {list.slice(0, count).map((item) => (
+            <Channel channel={item} key={item.id} onChannelClick={setChannel} />
           ))}
         </div>
+
+        {list.length > 12 && count < 100 && (
+          <Button variant="sm" className="mt-5" onClick={() => setCount(100)}>
+            Загрузить еще
+          </Button>
+        )}
       </section>
 
-      <Details data={activeChannel!} />
+      {/* <Details data={activeChannel!} /> */}
     </>
   );
 };
 
 const Channel = ({
   channel,
-  isActive,
   onChannelClick,
 }: {
   channel: ChannelItem;
-  isActive: boolean;
   onChannelClick: (channel: ChannelItem) => void;
 }) => (
-  <Link
-    href={`/?channel=${channel.id}`}
-    onClick={(e) => e.preventDefault()}
-    className="cursor-default"
+  <div
+    className={`w-full h-[188px] min-w-[300px] max-w-[335px] md:w-[308px] md:h-[208px] xl:w-[363px] xl:h-[242px] xl:max-w-full rounded-[4px] overflow-hidden relative transition-transform`}
+    style={{ boxShadow: "0 4px 14px 0 rgba(0, 0, 0, 0.1)" }}
+    onClick={() => onChannelClick(channel)}
   >
+    <FadeImg
+      src={`/channels/${channel.id}.png`}
+      alt={channel.title}
+      sizes="100%"
+      fill
+      quality={100}
+      className="object-cover object-center"
+      noLoader
+    />
+
     <div
-      className={`w-[240px] h-[166px] xl:w-[300px] xl:h-[242px] fhd:w-[371px] fhd:h-[242px] rounded-[8px] overflow-hidden relative transition-transform ${
-        isActive ? "active cursor-default" : "cursor-pointer"
-      }`}
-      style={{ boxShadow: "0 4px 14px 0 rgba(0, 0, 0, 0.35)" }}
-      onClick={() => onChannelClick(channel)}
+      className="absolute right-[10px] top-[10px] uppercase text-[12px] font-[700] bg-[#f9f9f9] py-[7px] px-6 rounded-[4px]"
+      style={{ letterSpacing: "0.07em" }}
     >
-      <FadeImg
-        src={`/channels/${channel.id}/main.webp`}
-        alt={channel.title}
-        sizes="100%"
-        fill
-        quality={100}
-        className="object-cover object-center"
-      />
+      {channel.categoryName}
     </div>
-  </Link>
+  </div>
 );

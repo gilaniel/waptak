@@ -16,7 +16,7 @@ export const Details = ({ data }: { data: ChannelItem }) => {
           <h3 className="text-[40px]">{data.title}</h3>
 
           <div className="w-full sm:w-auto">
-            <Link target="_blank" href={data.link}>
+            <Link target="_blank" href={data.link || ""}>
               <Button variant="sm" className="w-full sm:w-auto">
                 Посмотреть сейчас
               </Button>

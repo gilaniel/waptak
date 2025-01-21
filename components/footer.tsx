@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { Form } from "./form";
 import Link from "next/link";
+import { Copyright } from "./copyright";
 
 export const Footer = () => {
   return (
-    <footer className="mt-10 bg-[--black] py-[60px] px-[80px]">
+    <footer className="mt-6 bg-[--black] py-[60px] px-[80px]">
       <div className="flex flex-col xl:flex-row items-center gap-[60px] xl:gap-[110px]">
         <Image src="/logo.svg" alt="Waptak" width={74} height={52} />
 
@@ -19,10 +20,8 @@ export const Footer = () => {
         >
           Политика обработки персональных данных
         </Link>
-        <span className="text-[12px]">
-          {new Date().getFullYear()} Waptak Entertainment DMCC. All Rights
-          Reserved
-        </span>
+
+        <Copyright />
       </div>
     </footer>
   );
