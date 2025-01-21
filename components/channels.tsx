@@ -1,12 +1,12 @@
 "use client";
 
 import { ChannelItem } from "@/types/model";
-import { useMemo, useState } from "react";
-import { Details } from "./details";
-import { Slider } from "./slider";
+import { useState } from "react";
+// import { Details } from "./details";
+// import { Slider } from "./slider";
 import { Tabs } from "./tabs";
-import Link from "next/link";
-import Image from "next/image";
+// import Link from "next/link";
+// import Image from "next/image";
 import { FadeImg } from "./image";
 import { Button } from "./button";
 

@@ -8,10 +8,10 @@ import "swiper/css/pagination";
 import { FadeImg } from "./image";
 
 export const ShowSlider = ({ data }: { data: ChannelItem }) => {
-  const [selected, setSelected] = useState(data.gallery[0]);
+  const [selected, setSelected] = useState(data.gallery ? data.gallery[0] : []);
 
   const gallery = useMemo(() => {
-    return data.gallery;
+    return data.gallery || [];
   }, [data.id]);
 
   useEffect(() => {
