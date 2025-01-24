@@ -2,44 +2,44 @@ import { ChannelItem } from "@/types/model";
 
 export const channels: ChannelItem[] = [
   { id: 1, title: "Погнали", category: "youtube", categoryName: "ютуб" },
-  { id: 2, title: "Kino-Teatr.Ru", category: "youtube", categoryName: "ютуб" },
-  { id: 3, title: "Послезавтра", category: "youtube", categoryName: "ютуб" },
+  { id: 10, title: "Буба", category: "animation", categoryName: "Анимация" },
   {
     id: 4,
     title: "Прекрасное Далеко",
     category: "youtube",
     categoryName: "ютуб",
   },
-  { id: 5, title: "Сама Меньшова", category: "youtube", categoryName: "ютуб" },
-
-  { id: 6, title: "Prior Group", category: "series", categoryName: "Сериалы" },
-  { id: 7, title: "Mars Media", category: "series", categoryName: "Сериалы" },
-  {
-    id: 8,
-    title: "Russia television and radio",
-    category: "series",
-    categoryName: "Сериалы",
-  },
-
   { id: 9, title: "0+ Media", category: "animation", categoryName: "Анимация" },
-  { id: 10, title: "Буба", category: "animation", categoryName: "Анимация" },
-  {
-    id: 11,
-    title: "Мастер-фильм студия",
-    category: "animation",
-    categoryName: "Анимация",
-  },
-  { id: 12, title: "Pilot", category: "animation", categoryName: "Анимация" },
+
+  { id: 5, title: "Сама Меньшова", category: "youtube", categoryName: "ютуб" },
   {
     id: 13,
     title: "Союзмультфильм",
     category: "animation",
     categoryName: "Анимация",
   },
+  { id: 3, title: "Послезавтра", category: "youtube", categoryName: "ютуб" },
+  { id: 15, title: "КВН", category: "show", categoryName: "Шоу" },
 
   { id: 14, title: "Едим Дома", category: "show", categoryName: "Шоу" },
-  { id: 15, title: "КВН", category: "show", categoryName: "Шоу" },
   { id: 16, title: "Наука", category: "show", categoryName: "Шоу" },
+  { id: 7, title: "Mars Media", category: "series", categoryName: "Сериалы" },
+  { id: 12, title: "Pilot", category: "animation", categoryName: "Анимация" },
+
+  { id: 2, title: "Kino-Teatr.Ru", category: "youtube", categoryName: "ютуб" },
+  { id: 6, title: "Prior Group", category: "series", categoryName: "Сериалы" },
+  {
+    id: 8,
+    title: "Russia television and radio",
+    category: "series",
+    categoryName: "Сериалы",
+  },
+  {
+    id: 11,
+    title: "Мастер-фильм студия",
+    category: "animation",
+    categoryName: "Анимация",
+  },
   { id: 17, title: "stolet", category: "show", categoryName: "Шоу" },
   // {
   //   id: 1,
