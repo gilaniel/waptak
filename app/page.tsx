@@ -1,5 +1,6 @@
 import { Channels } from "@/components/channels";
 import { Hero } from "@/components/hero";
+import { Metr } from "@/components/metr";
 import { Partners } from "@/components/partners";
 import { getChannels, getPartners } from "@/data-access/api";
 
@@ -19,6 +20,7 @@ export default async function Home(props: {
       <Hero />
       <Channels channels={channels} current={currentId} />
       <Partners partners={partners} />
+      <Metr />
     </>
   );
 }
